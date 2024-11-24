@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+# Virtual environments
+.venv
+.env
+qdrant_storage
+.python-version
+estrutura.txt
+hello.py
+pyproject.toml
+README
+teste.py
