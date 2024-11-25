@@ -17,6 +17,7 @@ class WorkflowManager:
         self.qdrant_search = QdrantSearch(qdrant_url, collection_name)
         self.categorizer = MessageCategorizer(openai_model)
         self.answer_generator = AnswerGenerator(openai_model)
+        
 
     def handle_question(self, session_id, user_message):
         """
@@ -66,6 +67,7 @@ class WorkflowManager:
         if category == "off-topic":
             response = "Isso parece estar fora do tópico. Você pode fornecer mais detalhes?"
             self.session_manager.update_context(session_id, "assistant", response)
+            
             return {"resposta": response, "categoria": category}
 
         # Buscar informações no Qdrant para categorias relevantes
